@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+const title = 'Birding in the East Usambara Mountains: Nilo Forest Reserve and Amani';
+const description = 'Birding base in the East Usambara Mountains, Tanzania. Nilo Forest Lodge lies on the boundary of the Nilo Nature Forest Reserve, an Eastern Arc forest with Usambara endemics such as Usambara Weaver, Amani Sunbird, Long-billed Forest Warbler and Usambara Eagle-Owl. Specialist guide, Nilo Birding Week.';
+const faq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'When is the best time for birding in the East Usambara?', acceptedAnswer: { '@type': 'Answer', text: 'The forest can be birded year-round. Many birders prefer the drier months and the period around the short rains, when activity and song increase. The lodge is closed only during the peak of the long rains, when the access track may be restricted.' } },
+    { '@type': 'Question', name: 'Is a guide required in the Nilo Nature Forest Reserve?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Walks in the reserve require a licensed Tanzania Forest Services guide, which Nilo Forest Lodge arranges. A specialist birding guide from Amani can be booked in addition.' } },
+    { '@type': 'Question', name: 'How does Nilo compare with Amani Nature Reserve?', acceptedAnswer: { '@type': 'Answer', text: 'Both are East Usambara forests with a similar set of species. Amani is better known and receives more visitors; Nilo receives very few and can be birded from the lodge on foot. Amani is a day trip from the lodge, so both can be combined.' } },
+  ],
+};
+---
+<Base title={title} description={description} schema={faq}>
+  <PageHero title="Birding at Nilo" lead="The East Usambara Mountains are part of the Eastern Arc, a chain of ancient forest mountains with one of the highest concentrations of endemic birds on the continent. Nilo Forest Lodge stands at the boundary of the Nilo Nature Forest Reserve and is birded on foot from the house." crumbs={[{ href: '/birding/', label: 'Birding' }]} />
+
+  <section class="section">
+    <div class="wrap grid cols-2">
+      <div class="prose">
+        <h2>Why the East Usambara</h2>
+        <p>The Usambara Mountains have been isolated for millions of years, and their forests hold species found nowhere else. The East Usambara, lower and wetter than the West Usambara around Lushoto, is the stronghold for several of them. Nilo Nature Forest Reserve is one of the largest remaining forest blocks in the range and is recognised as an Important Bird Area.</p>
+        <h2>Species to look for</h2>
+        <p>Birds recorded in the East Usambara forests include Usambara Weaver, Amani Sunbird, Banded Green Sunbird, Long-billed Forest Warbler (Long-billed Tailorbird), Usambara Hyliota, Dapple-throat, Kretschmer's Longbill, Sharpe's Akalat, Green-headed Oriole, Fischer's Turaco, Silvery-cheeked Hornbill, Southern Banded Snake Eagle and Usambara Eagle-Owl. Which of these you encounter depends on season, effort and luck; no sightings are guaranteed.</p>
+        <h2>Beyond birds</h2>
+        <p>The same forest is a destination for herpetologists and botanists. Night walks turn up chameleons and endemic frogs, and the wild ancestors of the African violet grow on shaded rock faces in these mountains.</p>
+      </div>
+      <div>
+        <div class="card"><div class="body">
+          <h3>How birding works here</h3>
+          <ul class="facts single">
+            <li>Forest walks with a licensed TFS guide, arranged by the lodge</li>
+            <li>Specialist birding guide from Amani bookable for your stay</li>
+            <li>Forest boundary within walking distance of the terrace</li>
+            <li>Garden and farm birding around the house at dawn and dusk</li>
+            <li>Day trip to Amani Nature Reserve by Land Cruiser</li>
+            <li>Early breakfasts and packed lunches on request</li>
+          </ul>
+        </div></div>
+        <div class="card" style="margin-top:1.5rem"><div class="body">
+          <h3>Nilo Birding Week</h3>
+          <p>A six-night programme for small groups and tour operators that combines Nilo, Amani and the farm and forest edge habitats around the lodge. <a href="/tour-operators/">Details for tour operators</a>.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap prose">
+      <h2>Frequently asked questions</h2>
+      {faq.mainEntity.map((q) => (<><h3>{q.name}</h3><p>{q.acceptedAnswer.text}</p></>))}
+    </div>
+  </section>
+
+  <CtaBand title="Plan a birding stay" text="Send us your dates and target species. We arrange the TFS guide and, if you wish, a specialist birding guide from Amani." />
+</Base>
+<style>.facts.single { grid-template-columns: 1fr; }</style>

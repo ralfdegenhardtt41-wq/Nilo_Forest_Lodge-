@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE } from '../site';
+const title = 'Rates: House Rates in USD per Night';
+const description = 'Public guest rates for Nilo Forest Lodge, East Usambara, Tanzania. Main house from USD 200 and annex from USD 60 per night, year-round, exclusive-use house rates with bed and breakfast, half board or full board. Residents 50% off.';
+const main = [[1,200,210,220],[2,210,220,240],[3,220,230,260],[4,230,240,280]];
+const annex = [[1,60,70,80],[2,80,100,120]];
+---
+<Base title={title} description={description}>
+  <PageHero title="Rates" lead="House rates in USD per night, valid year-round, for exclusive use of each unit. Rates are per house, not per person. Water and soft drinks are included; alcohol is available on request from the bar." crumbs={[{ href: '/rates/', label: 'Rates' }]} />
+
+  <section class="section">
+    <div class="wrap grid cols-2">
+      <div>
+        <h2>Main house <span class="note">(max. 4 guests)</span></h2>
+        <div class="table-wrap"><table class="plain">
+          <thead><tr><th>Guests</th><th>Bed &amp; breakfast</th><th>Half board</th><th>Full board</th></tr></thead>
+          <tbody>{main.map((r) => <tr><td>{r[0]}</td><td>USD {r[1]}</td><td>USD {r[2]}</td><td>USD {r[3]}</td></tr>)}</tbody>
+        </table></div>
+      </div>
+      <div>
+        <h2>Annex <span class="note">(max. 2 guests)</span></h2>
+        <div class="table-wrap"><table class="plain">
+          <thead><tr><th>Guests</th><th>Bed &amp; breakfast</th><th>Half board</th><th>Full board</th></tr></thead>
+          <tbody>{annex.map((r) => <tr><td>{r[0]}</td><td>USD {r[1]}</td><td>USD {r[2]}</td><td>USD {r[3]}</td></tr>)}</tbody>
+        </table></div>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top:2.5rem">
+      <ul class="facts">
+        <li>Year-round, exclusive-use house rates, not per person</li>
+        <li>Water and soft drinks included; alcohol on request</li>
+        <li>Residents of Tanzania: 50% off with ID or residence permit at check-in, direct bookings only</li>
+        <li>Children and full-board details on request</li>
+        <li>Transfer Muheza to lodge USD 150 per vehicle; Land Cruiser with driver USD 250 per day</li>
+        <li>Tour operators: <a href="/tour-operators/">net rates on request</a></li>
+      </ul>
+      <p style="margin-top:2rem"><strong>Availability:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · Tel <a href={SITE.phoneHref}>{SITE.phone}</a></p>
+    </div>
+  </section>
+
+  <CtaBand title="Check availability" />
+</Base>

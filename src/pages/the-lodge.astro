@@ -1,0 +1,86 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Gallery from '../components/Gallery.astro';
+import CtaBand from '../components/CtaBand.astro';
+import m1 from '../assets/images/main-house-1.jpeg';
+import m2 from '../assets/images/main-house-2.jpeg';
+import m3 from '../assets/images/main-house-3.jpeg';
+import m4 from '../assets/images/main-house-4.jpeg';
+import m5 from '../assets/images/main-house-5.jpeg';
+import m6 from '../assets/images/main-house-6.jpeg';
+import m7 from '../assets/images/main-house-7.jpeg';
+import m8 from '../assets/images/main-house-8.jpeg';
+import m9 from '../assets/images/main-house-9.jpeg';
+import a1 from '../assets/images/annex-1.jpeg';
+import a2 from '../assets/images/annex-2.jpeg';
+import a3 from '../assets/images/annex-3.jpeg';
+
+const mainHouse = [
+  { src: m1, alt: 'Main house living room with handmade dhow-wood furniture, Nilo Forest Lodge' },
+  { src: m2, alt: 'King-size bedroom in the main house of Nilo Forest Lodge' },
+  { src: m3, alt: 'Open-air bathroom facing the forest, Nilo Forest Lodge main house' },
+  { src: m4, alt: 'Kitchen of the main house at Nilo Forest Lodge' },
+  { src: m5, alt: 'Covered terrace of the main house with view over the East Usambara valley' },
+  { src: m6, alt: 'Interior detail of the main house, Nilo Forest Lodge' },
+  { src: m7, alt: 'Terrace seating at Nilo Forest Lodge overlooking the forest' },
+  { src: m8, alt: 'Main house of Nilo Forest Lodge seen from the garden' },
+  { src: m9, alt: 'Evening light on the terrace of Nilo Forest Lodge' },
+];
+const annex = [
+  { src: a1, alt: 'Annex bedroom at Nilo Forest Lodge' },
+  { src: a2, alt: 'Private terrace of the annex, enclosed on three sides' },
+  { src: a3, alt: 'Garden with pavilion, pond and fire pit at the annex of Nilo Forest Lodge' },
+];
+const title = 'The Lodge: Main House and Annex';
+const description = 'Nilo Forest Lodge is a private house of 90 m² with king bedroom, open-air bathroom, kitchen and 50 m² terrace, plus a separate annex with private terrace. Exclusive use for up to six guests, from USD 200 per night, in the East Usambara Mountains.';
+---
+<Base title={title} description={description} ogImage={m1}>
+  <PageHero title="The Lodge" lead="A private house for exclusive use on the boundary of the Nilo Nature Forest Reserve, at 1,050 m altitude. Built to a standard well above other accommodation in the Usambara Mountains, with handmade furniture, western bathrooms and a terrace that looks straight into the forest canopy." crumbs={[{ href: '/the-lodge/', label: 'The Lodge' }]} />
+
+  <section class="section">
+    <div class="wrap grid cols-2 align">
+      <Gallery id="main-house" images={mainHouse} />
+      <div>
+        <p class="eyebrow">Main house · 90 m²</p>
+        <h2>Living above the valley</h2>
+        <p>One bedroom with a king-size bed, a living room with sofa bed, and a fully equipped kitchen. The bathroom is the highlight: an open-air WC and shower that opens towards the forest.</p>
+        <p>The terrace of around 50 m², partly covered, is where most of the day happens. Monkeys and forest birds are regularly seen from the terrace itself.</p>
+        <ul class="facts">
+          <li>King-size bedroom</li>
+          <li>Living room with sofa bed for two</li>
+          <li>Kitchen; meals prepared by lodge staff</li>
+          <li>Open-air bathroom facing the forest</li>
+          <li>Wall-mounted western WCs, quality ceramics and fittings</li>
+          <li>Custom furniture made from reclaimed dhow wood</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap grid cols-2 align">
+      <div>
+        <p class="eyebrow">Annex · 15 m²</p>
+        <h2>A second bedroom with its own terrace</h2>
+        <p>The annex is a separate building with a double bed and a private terrace of around 16 m², enclosed on three sides. It shares the garden with a pavilion, a pond and a fire pit for evenings under the stars.</p>
+        <p>The main house takes up to four guests and the annex two, so the property sleeps up to six. That suits families, small birding groups and couples travelling together.</p>
+      </div>
+      <Gallery id="annex" images={annex} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Practical details</h2>
+      <div class="grid cols-3">
+        <div class="card"><div class="body"><h3>Board</h3><p>Bed and breakfast, half board or full board. Meals are prepared at the lodge from local produce and the farm's own spices. Water and soft drinks are included, alcohol on request.</p></div></div>
+        <div class="card"><div class="body"><h3>Power and connectivity</h3><p>Grid electricity with solar backup. Internet is available at the lodge. Mobile coverage in the forest is limited.</p></div></div>
+        <div class="card"><div class="body"><h3>Rates and booking</h3><p>House rates from USD 200 per night for the main house and USD 60 for the annex, year-round. Reservations are handled from Switzerland, rates in USD. <a href="/rates/">See all rates</a>.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand title="Ask for dates and rates" />
+</Base>
+<style>.align { align-items: center; }</style>

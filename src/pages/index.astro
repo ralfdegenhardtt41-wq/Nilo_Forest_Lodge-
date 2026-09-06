@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { Image } from 'astro:assets';
+import hero from '../assets/images/hero_v2.jpg';
+import house from '../assets/images/main-house-1.jpeg';
+import annex from '../assets/images/annex-2.jpeg';
+import chameleon from '../assets/images/chameleon_real.jpg';
+import experience from '../assets/images/experience.jpg';
+
+const title = 'Nilo Forest Lodge | Private Forest House in the East Usambara Mountains, Tanzania';
+const description = 'Nilo Forest Lodge is a private two-bedroom house on the boundary of the Nilo Nature Forest Reserve in the East Usambara Mountains, Tanzania. Full board, forest walks with TFS guides, birding, spice farm. Ideal for nature travellers and tour operators.';
+---
+<Base title={title} description={description} transparentHeader>
+  <section class="hero">
+    <Image src={hero} alt="View from the terrace of Nilo Forest Lodge over the forested valley of the East Usambara Mountains" width={1600} widths={[640, 1024, 1600]} sizes="100vw" format="webp" quality={72} loading="eager" fetchpriority="high" class="hero-img" />
+    <div class="hero-content wrap">
+      <p class="eyebrow">East Usambara Mountains · Tanzania</p>
+      <h1>A private house above the clouds, on the edge of the Nilo Forest</h1>
+      <p>Two bedrooms, a 50 m² terrace at 1,050 m altitude and no other guests. Rainforest walks, night walks, birding and a working spice farm, right at the boundary of the Nilo Nature Forest Reserve.</p>
+      <div class="actions">
+        <a class="btn primary" href="/contact/">Enquire about dates</a>
+        <a class="btn light" href="/the-lodge/">See the lodge</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Why Nilo</p>
+      <h2>A rainforest that receives almost no visitors</h2>
+      <p class="lead">The Eastern Arc Mountains are one of the world's biodiversity hotspots. The Nilo Nature Forest Reserve in the East Usambara holds a high proportion of Usambara endemic birds, amphibians, reptiles and plants. From the lodge you reach the forest on foot.</p>
+      <ul class="facts">
+        <li>Private house for exclusive use, up to six guests</li>
+        <li>Bed and breakfast, half board or full board; water and soft drinks included</li>
+        <li>Forest walks with a licensed Tanzania Forest Services (TFS) guide</li>
+        <li>Working spice farm on the property: cardamom, pepper, vanilla, cloves, cinnamon</li>
+        <li>Electricity from the grid with solar backup, internet</li>
+        <li>Transfers by 4×4 from Muheza or Tanga arranged by us</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap grid cols-3">
+      <a class="card link" href="/the-lodge/">
+        <Image src={house} alt="Living room of the main house at Nilo Forest Lodge with handmade dhow-wood furniture" width={800} widths={[400, 800]} sizes="(max-width: 700px) 100vw, 360px" format="webp" quality={75} />
+        <div class="body"><h3>The Lodge</h3><p>Main house of 90 m² with king bedroom, open-air bathroom facing the forest, and a separate annex with its own terrace. House rates from USD 200 per night.</p></div>
+      </a>
+      <a class="card link" href="/activities/">
+        <Image src={chameleon} alt="Chameleon on a branch in the East Usambara forest near Nilo Forest Lodge" width={800} widths={[400, 800]} sizes="(max-width: 700px) 100vw, 360px" format="webp" quality={75} />
+        <div class="body"><h3>Activities</h3><p>Guided forest hikes, night walks for amphibians and chameleons, birding with a specialist guide, and a day trip to Amani Nature Reserve.</p></div>
+      </a>
+      <a class="card link" href="/tour-operators/">
+        <Image src={experience} alt="Forest trail in the Nilo Nature Forest Reserve, East Usambara Mountains" width={800} widths={[400, 800]} sizes="(max-width: 700px) 100vw, 360px" format="webp" quality={75} />
+        <div class="body"><h3>For Tour Operators</h3><p>A 2 to 3 night Usambara module between safari and Zanzibar, or a full birding week. Net rates, fact sheet and inspection visits.</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid cols-2 align">
+      <div>
+        <p class="eyebrow">Location</p>
+        <h2>Kazita, Misalai, near Amani</h2>
+        <p>The lodge sits in the Muheza District of the Tanga Region, on the boundary of the Nilo Nature Forest Reserve. The drive from Muheza takes around 1 h 45 min on an unpaved track. We organise the 4×4 transfer with a driver.</p>
+        <p>Tanga, with its airport and the connection to Zanzibar, is the nearest town. Nilo works well as a quiet stop between a northern safari and the coast.</p>
+        <a class="btn" href="/location/">Location and getting there</a>
+      </div>
+      <Image src={annex} alt="Annex of Nilo Forest Lodge with private terrace and garden" width={900} widths={[480, 900]} sizes="(max-width: 700px) 100vw, 540px" format="webp" quality={75} class="rounded" />
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+<style>
+  .hero { position: relative; min-height: 88vh; display: flex; align-items: center; color: var(--cream); background: var(--green-dark); }
+  .hero :global(.hero-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+  .hero-content { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding-top: 6rem; padding-bottom: 4rem; text-align: center; }
+  .hero h1 { color: var(--cream); margin-bottom: 1rem; }
+  .hero p { font-size: 1.1rem; color: var(--sand-light); max-width: 40rem; margin: 0 auto 1.75rem; }
+  .hero .eyebrow { color: var(--sand); }
+  .actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .card.link { text-decoration: none; color: inherit; transition: transform .25s ease, box-shadow .25s ease; }
+  .card.link:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(26,38,36,.12); }
+  .card.link :global(img) { aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+  .align { align-items: center; }
+  :global(.rounded) { border-radius: 6px; }
+</style>

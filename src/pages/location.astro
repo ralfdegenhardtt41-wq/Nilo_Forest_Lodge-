@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE } from '../site';
+const title = 'Location and Getting There: Amani, Muheza, Tanga';
+const description = 'How to reach Nilo Forest Lodge in the East Usambara Mountains: 4×4 transfer from Muheza (about 1 h 45 min, USD 150) or Tanga, connections from Arusha, Dar es Salaam and Zanzibar. Map, coordinates and seasonal advice.';
+const mapSrc = `https://maps.google.com/maps?q=${SITE.lat},${SITE.lng}&hl=en&z=13&t=k&output=embed`;
+---
+<Base title={title} description={description}>
+  <PageHero title="Location and getting there" lead="Nilo Forest Lodge lies at Kazita, Misalai, in the Amani area of the East Usambara Mountains, Muheza District, Tanga Region. The house stands directly on the boundary of the Nilo Nature Forest Reserve." crumbs={[{ href: '/location/', label: 'Location' }]} />
+
+  <section class="section">
+    <div class="wrap grid cols-2">
+      <div>
+        <h2>Absolute seclusion</h2>
+        <p>There are no other lodges or guest houses nearby. The last stretch of the drive climbs through villages and spice farms into the forest belt of the East Usambara, and the road ends at the house.</p>
+        <h3>From Muheza</h3>
+        <p>About 1 h 45 min on an unpaved track. Tour operators usually arrive in their own 4×4; for individual travellers a 4×4 is strongly advised, especially in the rainy season. We organise the transfer with an experienced driver at USD 150 per vehicle from Muheza.</p>
+        <h3>From further afield</h3>
+        <p>Muheza is on the main road between Tanga and the Arusha–Dar es Salaam corridor. Approximate driving times to the lodge: around 2.5 hours from Tanga, around 6 hours from Dar es Salaam, and 6 to 7 hours from Arusha. Overnight stops en route can be arranged.</p>
+        <h3>Zanzibar connection</h3>
+        <p>Tanga is the gateway to Zanzibar, with scheduled flights across the channel. This makes Nilo a natural 2 to 3 night stop between a northern circuit safari and the coast.</p>
+        <h3>Season</h3>
+        <p>The lodge is open year-round with the exception of the peak of the long rains, when the access track may be restricted. Ask us for the current dates when planning.</p>
+        <p class="note">GPS: {SITE.lat}, {SITE.lng} · Altitude 1,050 m</p>
+      </div>
+      <div class="map">
+        <iframe src={mapSrc} title="Map showing the location of Nilo Forest Lodge in the East Usambara Mountains" width="100%" height="100%" style="border:0;border-radius:6px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap prose">
+      <h2>Suggested itineraries</h2>
+      <ul>
+        <li><strong>Safari, Usambara, Zanzibar.</strong> Northern circuit safari, drive south via Moshi and Same to Muheza, two or three nights at Nilo, then Tanga to Zanzibar by air.</li>
+        <li><strong>Coast and forest.</strong> Fly to Tanga or drive from Dar es Salaam, three nights at Nilo with forest and farm, then Pangani or Zanzibar beaches.</li>
+        <li><strong>Eastern Arc birding.</strong> Combine Nilo with Amani Nature Reserve and the West Usambara around Lushoto for a full week of Eastern Arc endemics.</li>
+      </ul>
+    </div>
+  </section>
+
+  <CtaBand title="Let us plan the transfer" text="Tell us where you are coming from and we will propose the transfer and any overnight stops." />
+</Base>
+<style>.map { min-height: 420px; }</style>

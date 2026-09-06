@@ -1,0 +1,13 @@
+---
+interface Props { title?: string; text?: string }
+const { title = 'Plan your stay in the East Usambara forest', text = 'Tell us your travel dates, group size and interests. We reply within 24 hours with availability and rates in USD.' } = Astro.props;
+---
+<section class="cta-band">
+  <div class="wrap">
+    <h2>{title}</h2>
+    <p>{text}</p>
+    <a class="btn primary" href="/contact/">Send an enquiry</a>
+    <p class="contact-line">ralf@niloforest.com · Tel +41 77 280 92 44</p>
+  </div>
+</section>
+<style>.contact-line { margin: 1.25rem auto 0; font-size: .9rem; }</style>

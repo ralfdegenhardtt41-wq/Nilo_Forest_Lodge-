@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { SITE } from '../site';
+const title = 'Contact and Enquiries';
+const description = 'Enquire about availability and rates at Nilo Forest Lodge, East Usambara Mountains, Tanzania. Email ralf@niloforest.com or call +41 77 280 92 44. Reservations handled from Switzerland, rates in USD.';
+const subject = encodeURIComponent('Enquiry Nilo Forest Lodge: dates and rates');
+const body = encodeURIComponent('Hello,\n\nI would like to enquire about Nilo Forest Lodge.\n\nTravel dates:\nNumber of guests:\nInterests (forest walks, birding, farm, Amani):\nArriving from:\n\nThank you.');
+---
+<Base title={title} description={description}>
+  <PageHero title="Contact" lead="Enquiries for rates and availability are answered from Switzerland within 24 hours. All rates are quoted in USD." crumbs={[{ href: '/contact/', label: 'Contact' }]} />
+
+  <section class="section">
+    <div class="wrap grid cols-2">
+      <div>
+        <h2>Reservations</h2>
+        <p class="big"><a href={`mailto:${SITE.email}?subject=${subject}&body=${body}`}>{SITE.email}</a></p>
+        <p class="big">Tel <a href={SITE.phoneHref}>{SITE.phone}</a></p>
+        <p>{SITE.role}</p>
+        <a class="btn primary" href={`mailto:${SITE.email}?subject=${subject}&body=${body}`}>Write an enquiry</a>
+        <p class="note" style="margin-top:1.5rem">Please include your travel dates, number of guests, interests and where you will be arriving from. Tour operators: <a href="/tour-operators/">net rates and fact sheet</a>.</p>
+      </div>
+      <div>
+        <h2>The lodge</h2>
+        <p>Nilo Forest Lodge<br />Kazita, Misalai, Amani area<br />Muheza District, Tanga Region<br />Tanzania</p>
+        <p class="note">GPS {SITE.lat}, {SITE.lng} · Altitude 1,050 m<br />Lodge manager on site: Saidi</p>
+        <h3 style="margin-top:2rem">Operator</h3>
+        <p>{SITE.operator}<br />{SITE.operatorAddress}</p>
+        <p class="note">The lodge is a private business. The conservation charity Friends of Nilo Forest is separate: <a href="https://niloforest.com" rel="noopener">niloforest.com</a>.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>.big { font-size: 1.3rem; font-family: var(--serif); }</style>

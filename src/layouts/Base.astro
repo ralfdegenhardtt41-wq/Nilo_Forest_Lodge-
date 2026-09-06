@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../site';
+import ogDefault from '../assets/images/hero_v2.jpg';
+import { getImage } from 'astro:assets';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: ImageMetadata;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+  transparentHeader?: boolean;
+}
+const { title, description, ogImage, schema, transparentHeader = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const og = await getImage({ src: ogImage ?? ogDefault, width: 1200, height: 630, format: 'jpeg' });
+const ogUrl = new URL(og.src, SITE.url).href;
+const fullTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
+
+const baseSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['LodgingBusiness', 'TouristAttraction'],
+  '@id': `${SITE.url}/#lodge`,
+  name: SITE.name,
+  url: SITE.url,
+  email: SITE.email,
+  telephone: SITE.phone,
+  description: SITE.tagline,
+  image: ogUrl,
+  priceRange: 'USD',
+  currenciesAccepted: 'USD',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Amani, Muheza District',
+    addressRegion: 'Tanga Region',
+    addressCountry: 'TZ',
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: SITE.lat, longitude: SITE.lng, elevation: SITE.altitude },
+  containedInPlace: { '@type': 'Place', name: 'Nilo Nature Forest Reserve, East Usambara Mountains' },
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Private house, exclusive use', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Full board', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Electricity with solar backup', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Internet', value: true },
+  ],
+  parentOrganization: { '@type': 'Organization', name: SITE.operator, address: SITE.operatorAddress },
+};
+const schemas = [baseSchema, ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#1A2624" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    {schemas.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Skip to content</a>
+    <Header transparent={transparentHeader} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

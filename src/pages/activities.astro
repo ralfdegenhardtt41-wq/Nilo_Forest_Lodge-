@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { Image } from 'astro:assets';
+import chameleon from '../assets/images/chameleon_real.jpg';
+import experience from '../assets/images/experience.jpg';
+import bonfire from '../assets/images/bonfire.png';
+const title = 'Activities: Forest Walks, Night Walks, Birding and Spice Farm';
+const description = 'Activities at Nilo Forest Lodge, East Usambara: guided rainforest hikes with TFS guides, night walks for chameleons and frogs, birding with a specialist guide, spice farm tour with cardamom, vanilla and cloves, day trip to Amani Nature Reserve.';
+---
+<Base title={title} description={description} ogImage={chameleon}>
+  <PageHero title="Activities" lead="Everything starts at the house. The forest boundary is a few minutes away on foot, the spice farm is on the property, and Amani Nature Reserve is a day trip." crumbs={[{ href: '/activities/', label: 'Activities' }]} />
+
+  <section class="section">
+    <div class="wrap grid cols-2 align">
+      <Image src={experience} alt="Guided walk on a forest trail in the Nilo Nature Forest Reserve" width={900} widths={[480, 900]} sizes="(max-width: 700px) 100vw, 540px" format="webp" quality={75} class="rounded" />
+      <div>
+        <p class="eyebrow">Nilo Nature Forest Reserve</p>
+        <h2>Guided forest walks</h2>
+        <p>Walks in the reserve are led by a licensed Tanzania Forest Services (TFS) guide, which we arrange for you. Trails lead through submontane rainforest with giant trees, tree ferns, orchids and the wild relatives of the African violet, which originates in these mountains.</p>
+        <p>Half-day and full-day walks are possible. For longer hikes we work with an experienced external hiking guide from the area.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="grid cols-3">
+        <div class="card">
+          <Image src={chameleon} alt="Chameleon found on a night walk near Nilo Forest Lodge" width={800} widths={[400, 800]} sizes="(max-width: 700px) 100vw, 360px" format="webp" quality={75} />
+          <div class="body"><h3>Night walks</h3><p>After dark the forest edge comes alive. Night walks focus on amphibians and reptiles, including the chameleons the Usambara Mountains are known for. Bring a headlamp; we provide the guide.</p></div>
+        </div>
+        <div class="card">
+          <div class="body"><h3>Birding</h3><p>The East Usambara is one of the most important forest bird areas in Africa. A specialist birding guide from Amani can be booked for your stay. <a href="/birding/">Read more about birding at Nilo</a>.</p></div>
+        </div>
+        <div class="card">
+          <div class="body"><h3>Spice farm</h3><p>The lodge sits on a working farm. Walk with the farm staff through cardamom, black pepper, vanilla, cloves and cinnamon, and see harvesting and drying when in season.</p></div>
+        </div>
+        <div class="card">
+          <div class="body"><h3>Amani Nature Reserve</h3><p>A day trip to Amani, the best-known reserve of the East Usambara, with its botanical garden, research history and forest trails. Transport by Land Cruiser can be arranged.</p></div>
+        </div>
+        <div class="card">
+          <div class="body"><h3>Land Cruiser tours</h3><p>Drives deeper into the forest belt and to viewpoints in the hills. A Land Cruiser with driver is available at USD 250 per day for individual travellers.</p></div>
+        </div>
+        <div class="card">
+          <Image src={bonfire} alt="Fire pit in the garden of Nilo Forest Lodge in the evening" width={800} widths={[400, 800]} sizes="(max-width: 700px) 100vw, 360px" format="webp" quality={75} />
+          <div class="body"><h3>Evenings at the house</h3><p>Fire pit in the garden, dinner on the terrace, and a sky without light pollution. Most guests find that doing nothing here is an activity in itself.</p></div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:1.5rem">Wildlife sightings can never be guaranteed. Guides are arranged by the lodge; guide fees and reserve entry are confirmed with your booking.</p>
+    </div>
+  </section>
+
+  <CtaBand title="Tell us what you would like to see" text="Birds, chameleons, plants or simply the forest: we put together the guides and days to match." />
+</Base>
+<style>.align { align-items: center; } :global(.rounded) { border-radius: 6px; } .card :global(img) { aspect-ratio: 4/3; object-fit: cover; width: 100%; }</style>

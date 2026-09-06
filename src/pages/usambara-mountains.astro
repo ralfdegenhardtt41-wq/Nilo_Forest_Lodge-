@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+const title = 'The Usambara Mountains: Eastern Arc Rainforest in Tanzania';
+const description = 'Travel guide to the Usambara Mountains in north-eastern Tanzania: East and West Usambara, Amani Nature Reserve, Nilo Nature Forest Reserve, Lushoto, how to get there and where to stay. Part of the Eastern Arc Mountains biodiversity hotspot.';
+---
+<Base title={title} description={description}>
+  <PageHero title="The Usambara Mountains" lead="A short guide to the mountains around Nilo Forest Lodge: what makes them special, how East and West Usambara differ, and how to fit them into a Tanzania itinerary." crumbs={[{ href: '/usambara-mountains/', label: 'Usambara' }]} />
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Part of the Eastern Arc</h2>
+      <p>The Usambara Mountains rise in the Tanga Region of north-eastern Tanzania, not far from the Indian Ocean. They belong to the Eastern Arc Mountains, a chain of crystalline ranges that runs from the Taita Hills in Kenya to the Udzungwa Mountains in southern Tanzania. Unlike the volcanic Kilimanjaro, these mountains are very old, and their forests have been stable for millions of years. The result is an exceptional number of species found nowhere else, which has earned the Eastern Arc a reputation as one of the world's biodiversity hotspots.</p>
+
+      <h2>East and West Usambara</h2>
+      <p>The range is split in two by the Lwengera valley. The <strong>West Usambara</strong> around Lushoto is higher, drier and more densely settled, with viewpoints, village walks and a cooler climate. The <strong>East Usambara</strong>, where Nilo Forest Lodge is located, is lower, wetter and greener, with submontane rainforest, tea estates and spice farms. It is the East Usambara that holds most of the endemic birds, amphibians and plants.</p>
+
+      <h2>Amani and Nilo</h2>
+      <p><strong>Amani Nature Reserve</strong> is the best-known protected area of the East Usambara. Established as a reserve in 1997 around a former German research station and botanical garden, it has trails, a visitor centre and a long history of scientific work. <strong>Nilo Nature Forest Reserve</strong> lies to the north of Amani and is one of the largest forest blocks in the range. It is managed by Tanzania Forest Services and receives very few visitors. Nilo Forest Lodge stands directly on its boundary, and Amani is a day trip from the lodge.</p>
+
+      <h2>Getting there</h2>
+      <p>The East Usambara is reached from Muheza, on the road between Tanga and the Arusha–Dar es Salaam corridor. From Muheza an unpaved track climbs into the hills; the drive to Nilo Forest Lodge takes around 1 h 45 min by 4×4. Tanga has an airport with flights to Zanzibar and Dar es Salaam. <a href="/location/">Location and transfers</a>.</p>
+
+      <h2>When to visit</h2>
+      <p>The East Usambara is green all year. The long rains, usually from around March to May, bring the heaviest rainfall and can restrict access on the tracks; the lodge is closed at the peak of that period. The rest of the year is suitable for walking, birding and farm visits, with the short rains in November and December bringing fresh growth and bird activity.</p>
+
+      <h2>Fitting Usambara into an itinerary</h2>
+      <ul>
+        <li>Two or three nights between a northern circuit safari and Zanzibar, via Moshi and Muheza, with the flight to Zanzibar from Tanga.</li>
+        <li>A forest-and-coast trip from Dar es Salaam: Nilo, then Pangani or Zanzibar.</li>
+        <li>A full Eastern Arc week for birders: Nilo, Amani and the West Usambara around Lushoto.</li>
+      </ul>
+      <p><a href="/the-lodge/">Staying at Nilo Forest Lodge</a> · <a href="/birding/">Birding in the East Usambara</a></p>
+    </div>
+  </section>
+
+  <CtaBand title="Add the Usambara Mountains to your Tanzania trip" />
+</Base>

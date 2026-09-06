@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE } from '../site';
+const title = 'For Tour Operators and DMCs: Usambara Module and Birding Week';
+const description = 'Nilo Forest Lodge for tour operators, DMCs and natural history specialists: private two-bedroom house at the Nilo Nature Forest Reserve, East Usambara. Packages Forest & Farm (3 nights), Nilo Birding Week (6 nights), Usambara Interlude (2 nights). Net rates, fact sheet and inspection visits.';
+---
+<Base title={title} description={description}>
+  <PageHero title="For tour operators" lead="A private house at the boundary of the Nilo Nature Forest Reserve, East Usambara. Full-board options, TFS guides arranged, a working spice farm on the property, and a 4×4 access track that we communicate openly because it is part of the product." crumbs={[{ href: '/tour-operators/', label: 'Tour Operators' }]} />
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Where Nilo fits in a programme</h2>
+      <div class="grid cols-3">
+        <div class="card"><div class="body"><h3>Usambara Interlude · 2 nights</h3><p>A quiet forest module between the northern circuit and Zanzibar, or between Dar es Salaam and the coast. Tanga airport connects to Zanzibar.</p></div></div>
+        <div class="card"><div class="body"><h3>Forest &amp; Farm · 3 nights</h3><p>Guided forest walks, a night walk, the spice farm and a day at Amani Nature Reserve. Suited to FIT clients with an interest in nature and culture.</p></div></div>
+        <div class="card"><div class="body"><h3>Nilo Birding Week · 6 nights</h3><p>For birding and natural history operators: Nilo, Amani and the habitats around the lodge with a specialist guide. Small groups only.</p></div></div>
+      </div>
+      <p style="margin-top:1.5rem">The whole property can also be sold as an <strong>exclusive house</strong> for one party of up to six guests.</p>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap grid cols-2">
+      <div>
+        <h2>Facts for your product team</h2>
+        <ul class="facts single">
+          <li>Private house, two units: main house (max. 4) and annex (max. 2), six guests in total</li>
+          <li>Standard well above other accommodation in the Usambara Mountains</li>
+          <li>Electricity from the grid with solar backup, internet</li>
+          <li>Bed and breakfast, half board or full board; water and soft drinks included</li>
+          <li>Forest walks with licensed TFS guide, arranged by the lodge; birding specialist from Amani bookable</li>
+          <li>Access: about 1 h 45 min from Muheza on an unpaved track, 4×4; transfers arranged on request</li>
+          <li>Open year-round except the peak of the long rains</li>
+          <li>Lodge manager on site; reservations handled from Switzerland with 24-hour response</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Working with us</h2>
+        <p><strong>Net rates.</strong> Trade net rates for specialist operators and DMCs are available on request, together with cancellation terms, child policy and release periods. Public guest rates are shown on the <a href="/rates/">rates page</a>.</p>
+        <p><strong>Fact sheet.</strong> A two-page fact sheet with rates, species notes and access details is available by email.</p>
+        <p><strong>Inspection visits.</strong> We offer a complimentary stay for product managers wishing to inspect the property; travel to the lodge at your own cost.</p>
+        <p><strong>Images.</strong> A gallery with usage rights for catalogues and websites is available on request.</p>
+        <p><strong>Contact.</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · Tel <a href={SITE.phoneHref}>{SITE.phone}</a><br />{SITE.role}</p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand title="Request the fact sheet and net rates" text="Tell us your markets and the kind of itineraries you sell. We reply within 24 hours." />
+</Base>
+<style>.facts.single { grid-template-columns: 1fr; }</style>
