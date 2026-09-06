@@ -45,7 +45,7 @@ const baseSchema = {
     { '@type': 'LocationFeatureSpecification', name: 'Electricity with solar backup', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Internet', value: true },
   ],
-  parentOrganization: { '@type': 'Organization', name: SITE.operator, address: SITE.operatorAddress },
+  parentOrganization: { '@type': 'Organization', name: SITE.operator, address: { '@type': 'PostalAddress', addressCountry: 'TZ' } },
 };
 const schemas = [baseSchema, ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])];
 ---

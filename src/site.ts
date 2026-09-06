@@ -9,8 +9,8 @@ export const SITE = {
   tagline: 'A private forest house on the edge of the Nilo Nature Forest Reserve, East Usambara Mountains, Tanzania',
   lat: -5.0046989,
   lng: 38.6296349,
-  operator: 'Tanzagate GmbH',
-  operatorAddress: 'Hardturmstrasse 161, 8005 Zürich, Switzerland',
+  operator: 'Tanzagate Ltd',
+  operatorAddress: 'Tanzania',
 };
 
 export const NAV = [
