@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#1A2624"/><path d="M32 10 18 34h9l-9 14h28l-9-14h9z" fill="#CEB489"/><rect x="29" y="46" width="6" height="8" fill="#CEB489"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="12 14 176 176" role="img" aria-label="Nilo Forest Lodge">
+  <title>Nilo Forest Lodge</title>
+  <path fill="#6F7F64" fill-rule="evenodd" d="M72 18 H128 Q152 18 152 42 V142 Q152 176 100 188 Q48 176 48 142 V42 Q48 18 72 18 Z M90 33 H110 A4.5 4.5 0 0 1 110 42 H90 A4.5 4.5 0 0 1 90 33 Z"/>
+  <path d="M117 72 H127 V92 H117 Z" fill="#F4EFE4"/>
+  <path d="M60 102 L100 68 L140 102" fill="none" stroke="#F4EFE4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#F4EFE4"><path transform="translate(71.12 162)" d="M55.71 -40.74H50.39V0L44.69 0.08L18.16 -31.31H17.86V-8.66H24.7V0H3.04V-8.66H8.36V-40.74H2.2V-49.4H15.66L40.58 -20.06H40.89V-40.74H33.74V-49.4H55.71Z"/></g>
+</svg>
