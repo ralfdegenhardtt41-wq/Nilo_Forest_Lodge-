@@ -6,7 +6,7 @@ const path = Astro.url.pathname;
 ---
 <header class:list={['site-header', { transparent }]}>
   <div class="wrap bar">
-    <a class="brand" href="/">{SITE.name}</a>
+    <a class="brand" href="/" aria-label={`${SITE.name}, home`}><img src="/logo-tag.svg" alt={SITE.name} width="35" height="60" /></a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
     <label for="nav-toggle" class="burger" aria-label="Open menu"><span></span><span></span><span></span></label>
     <nav aria-label="Main">
@@ -19,7 +19,8 @@ const path = Astro.url.pathname;
   .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 20; background: var(--green-dark); }
   .site-header.transparent { background: linear-gradient(rgba(10,18,16,.65), rgba(10,18,16,0)); }
   .bar { display: flex; align-items: center; justify-content: space-between; height: 72px; position: relative; }
-  .brand { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--cream); text-decoration: none; letter-spacing: .01em; }
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  .brand img { display: block; height: 58px; width: auto; }
   nav { display: flex; gap: 1.4rem; align-items: center; }
   nav a { color: var(--cream); text-decoration: none; font-size: .92rem; opacity: .9; }
   nav a:hover, nav a[aria-current] { opacity: 1; text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--sand); }
@@ -27,6 +28,7 @@ const path = Astro.url.pathname;
   nav .btn.small:hover { background: var(--sand); color: var(--green-dark); }
   .nav-toggle, .burger { display: none; }
   @media (max-width: 900px) {
+    .brand img { height: 52px; }
     .burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: .5rem; }
     .burger span { display: block; width: 24px; height: 2px; background: var(--cream); }
     nav { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; align-items: flex-start; background: var(--green-dark); padding: 1rem 1.25rem 1.5rem; gap: 1rem; }
